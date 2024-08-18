@@ -1,9 +1,6 @@
 {
-  "platforms": ["ios", "tvos", "android", "web"],
+  "platforms": ["ios"],
   "ios": {
     "modules": ["ExpoMusicKitAuthModule"]
-  },
-  "android": {
-    "modules": ["expo.modules.musickitauth.ExpoMusicKitAuthModule"]
   }
 }

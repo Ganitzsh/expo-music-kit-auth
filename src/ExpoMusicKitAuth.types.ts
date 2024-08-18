@@ -1,7 +1,12 @@
-export type ChangeEventPayload = {
-  value: string;
-};
+export enum AuthStatus {
+  Authorized = 'authorized',
+  Denied = 'denied',
+  NotDetermined = 'notDetermined',
+  Restricted = 'restricted',
+  Unknown = 'unknown',
+}
 
-export type ExpoMusicKitAuthViewProps = {
-  name: string;
-};
+export interface Tokens {
+  userToken: string;
+  developerToken: string;
+}
