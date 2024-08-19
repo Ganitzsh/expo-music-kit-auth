@@ -39,7 +39,6 @@ public class ExpoMusicKitAuthModule: Module {
 
     AsyncFunction("getTokens") { () in
       do {
-        let recordId = try await self.getRecordId()
         let defaultTokenProvider = DefaultMusicTokenProvider.init()
         let developerToken = try await defaultTokenProvider.developerToken(
           options: MusicTokenRequestOptions())
@@ -50,7 +49,6 @@ public class ExpoMusicKitAuthModule: Module {
         let tokens: [String: String] = [
           "developerToken": developerToken,
           "userToken": userToken,
-          "recordId": recordId,
         ]
 
         return tokens
