@@ -9,4 +9,5 @@ export enum AuthStatus {
 export interface Tokens {
   userToken: string;
   developerToken: string;
+  storefront: string;
 }

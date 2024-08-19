@@ -9,4 +9,8 @@ export async function getTokens(): Promise<Tokens> {
   return await ExpoMusicKitAuthModule.getTokens();
 }
 
+export async function getStorefrontId(): Promise<string> {
+  return await ExpoMusicKitAuthModule.getStorefrontId();
+}
+
 export { AuthStatus, Tokens };

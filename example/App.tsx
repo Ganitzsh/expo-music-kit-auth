@@ -5,6 +5,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   const [tokens, setTokens] = useState<ExpoMusicKitAuth.Tokens | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [storefrontId, setStorefrontId] = useState<string | null>(null);
 
   const getTokens = async () => {
     if (tokens !== null) return;
@@ -18,6 +19,8 @@ export default function App() {
         return;
       }
 
+      const remoteStorefrontId = await ExpoMusicKitAuth.getStorefrontId();
+      setStorefrontId(remoteStorefrontId);
       const tokens = await ExpoMusicKitAuth.getTokens();
 
       setTokens(tokens);
@@ -36,6 +39,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {error && <Text>{error}</Text>}
+      {storefrontId && <Text>Storefront ID: {storefrontId}</Text>}
       {tokens ? (
         <Text>{JSON.stringify(tokens, null, 2)}</Text>
       ) : (
