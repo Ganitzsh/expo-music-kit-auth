@@ -1,6 +1,6 @@
 {
   "name": "expo-music-kit-auth",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple module to retrieve the users' Music Kit API tokens",
   "main": "build/index.js",
   "types": "build/index.d.ts",
