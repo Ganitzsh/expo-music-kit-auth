@@ -41,10 +41,10 @@ public class ExpoMusicKitAuthModule: Module {
       do {
         let defaultTokenProvider = DefaultMusicTokenProvider.init()
         let developerToken = try await defaultTokenProvider.developerToken(
-          options: MusicTokenRequestOptions())
-        let musicUserTokenProvider = MusicUserTokenProvider()
+          options: MusicTokenRequestOptions.init())
+        let musicUserTokenProvider = MusicUserTokenProvider.init()
         let userToken = try await musicUserTokenProvider.userToken(
-          for: developerToken, options: MusicTokenRequestOptions())
+          for: developerToken, options: MusicTokenRequestOptions.init())
 
         let tokens: [String: String] = [
           "developerToken": developerToken,
